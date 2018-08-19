@@ -28,13 +28,13 @@ public class WordFrequencyTest {
     public void testDigitInput() {
         Map<String, Integer> output = frequency.countOccurrencesOfWordsWithin("12 43 395");
 
-        Assert.assertNotNull("Output is not null", output);
+        Assert.assertNotNull("Output is null", output);
 
-        Assert.assertNotNull("'12' word count exists in output", output.get("12"));
+        Assert.assertNotNull("'12' word count does not exist in output", output.get("12"));
         Assert.assertEquals(1, (int) output.get("12"));
-        Assert.assertNotNull("'43' word count exists in output", output.get("43"));
+        Assert.assertNotNull("'43' word count does not exist in output", output.get("43"));
         Assert.assertEquals(1, (int) output.get("43"));
-        Assert.assertNotNull("'395' word count exists in output", output.get("395"));
+        Assert.assertNotNull("'395' word count does not exist in output", output.get("395"));
         Assert.assertEquals(1, (int) output.get("395"));
     }
 
@@ -42,7 +42,7 @@ public class WordFrequencyTest {
     public void testNonCharacterInput() {
         Map<String, Integer> output = frequency.countOccurrencesOfWordsWithin("!@$ @!$ ~!)@");
 
-        Assert.assertNotNull("Output is not null", output);
+        Assert.assertNotNull("Output is null", output);
 
         Assert.assertTrue("Output is not empty", output.isEmpty());
     }

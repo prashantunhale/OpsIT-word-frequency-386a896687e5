@@ -52,13 +52,13 @@ public class WordFrequencyConcurrencyTest {
 
         Assert.assertNotNull("Output is not null", output);
 
-        Assert.assertNotNull("'the' word count exists in output", output.get("the"));
+        Assert.assertNotNull("'the' word count does not exist in output", output.get("the"));
         Assert.assertEquals(2_000_000, (int) output.get("the"));
-        Assert.assertNotNull("'moon' word count exists in output", output.get("moon"));
+        Assert.assertNotNull("'moon' word count does not exist in output", output.get("moon"));
         Assert.assertEquals(1_000_000, (int) output.get("moon"));
-        Assert.assertNotNull("'in' word count exists in output", output.get("in"));
+        Assert.assertNotNull("'in' word count does not exist in output", output.get("in"));
         Assert.assertEquals(1_000_000, (int) output.get("in"));
-        Assert.assertNotNull("'man' word count exists in output", output.get("man"));
+        Assert.assertNotNull("'man' word count does not exist in output", output.get("man"));
         Assert.assertEquals(1_000_000, (int) output.get("man"));
     }
 }
